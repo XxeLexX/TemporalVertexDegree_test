@@ -4,16 +4,19 @@ import org.gradoop.flink.model.impl.epgm.LogicalGraph;
 import org.gradoop.flink.util.FlinkAsciiGraphLoader;
 import org.gradoop.flink.util.GradoopFlinkConfig;
 import org.gradoop.temporal.model.impl.TemporalGraph;
+
 public class PersonKnows {
+
     public static TemporalGraph getCommunity(GradoopFlinkConfig config){
+
         FlinkAsciiGraphLoader loader = new FlinkAsciiGraphLoader(config);
 
         // Data
         String gdlGraph = "Community [" +
                 // Vertices
-                "(alice:Person)" +
-                "(bob:Person)" +
-                "(eve:Person)" +
+                "(alice:Person {name : \"Alice\", age : 23, city : \"Leipzig\"})" +
+                "(bob:Person {name : \"Bob\", age : 20, city : \"Berlin\"})" +
+                "(eve:Person {name : \"Eve\", age : 24, city : \"Leipzig\"})" +
                 // Edges
                 "(alice)-[e1:knows {since: \"2014-1-1 22:00:00.0000\"}]->(bob)" +
                 "(alice)-[e2:knows {since: \"2015-1-30 14:30:36.0000\"}]->(eve)" +
@@ -30,6 +33,4 @@ public class PersonKnows {
         // transform to temporal graph by extracting time intervals from vertices
         return TemporalGraph.fromGraph(networkGraph);
     }
-
-
 }
