@@ -18,13 +18,13 @@ public class Degree_Community {
 
         TemporalGraph communityGraph = PersonKnows.getCommunity(GradoopFlinkConfig.createConfig(env));
 
-        communityGraph.print();
+        //communityGraph.print();
 
         // set the time dimension as VALID or TRANSFORM
         TimeDimension timeDimension = TimeDimension.VALID_TIME;
 
         // set the DegreeType as IN, OUT or BOTH
-        VertexDegree degreeType = VertexDegree.IN;
+        VertexDegree degreeType = VertexDegree.OUT;
 
         // set the parameter of operator
         TemporalVertexDegree operator = new TemporalVertexDegree(degreeType, timeDimension);
