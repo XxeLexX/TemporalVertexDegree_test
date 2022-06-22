@@ -5,8 +5,6 @@ import org.gradoop.flink.util.FlinkAsciiGraphLoader;
 import org.gradoop.flink.util.GradoopFlinkConfig;
 import org.gradoop.temporal.model.impl.TemporalGraph;
 import org.gradoop.temporal.model.impl.pojo.TemporalEdge;
-import org.gradoop.temporal.model.impl.pojo.TemporalVertex;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
